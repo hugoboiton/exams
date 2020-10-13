@@ -1,0 +1,19 @@
+Herramientas de desarrollo
+----------------------------
+    # Base de datos : Mysql,
+    # Api de comunicacion : net core v3
+    # fron_end : react js 
+
+Definicion Carpetas
+------------------------------
+# en la carpeta script_bd estan los escript 
+  de la base datos asi como los procesimeintos
+# en la carpeta web_api esta el codigo del Api
+# en la carpeta web_cli_frond esta el codigo del fron_end
+
+Comandos para correr scripst
+-------------------------------
+# Api   dopnet run (se abre en el puerto 5001)
+# react 
+    npm install para instalar todas las dependecias
+    npm start  para levantar la aplicacion (se abre en el puerto 3000)
