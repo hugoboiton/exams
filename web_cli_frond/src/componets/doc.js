@@ -6,9 +6,12 @@ import { Button,
     Form,  
     Alert,
     Fade,
-    Badge 
+    Badge, 
+    Collapse
 } from 'reactstrap';
 import axios from 'axios'
+import logo from './logo2.png';
+import { saveAs } from 'file-saver';
 export class Doct extends Component {
    
     constructor(props){
@@ -98,16 +101,54 @@ export class Doct extends Component {
         }
        
     }
-
+ 
+    
+    b64toFile(b64Data, filename, contentType) {
+        var sliceSize = 512;
+        var byteCharacters = atob(b64Data);
+        var byteArrays = [];
+    
+        for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            var slice = byteCharacters.slice(offset, offset + sliceSize);
+            var byteNumbers = new Array(slice.length);
+    
+            for (var i = 0; i < slice.length; i++) {
+                byteNumbers[i] = slice.charCodeAt(i);
+            }
+            var byteArray = new Uint8Array(byteNumbers);
+            byteArrays.push(byteArray);
+        }
+        var file = new File(byteArrays, filename, {type: contentType});
+        return file;
+    }
 
     ver()
     {
-        const {flag}=this.state;
-        flag.status=!flag.status;
-        flag.messeg= this.props.conte;
-        this.setState({
-            flag:flag
-        })
+        var nombre=this.props.name;
+        nombre=nombre.split(".");  
+        var vec=this.props.conte;
+        console.log(vec);
+        console.log(this.getTipo(nombre[1]))
+        vec=this.b64toFile(vec,this.props.name,nombre[1])
+        var FileSaver = require('file-saver');
+        var blob = new Blob([vec],{type:"octet/stream"})
+        FileSaver.saveAs(blob,this.props.name);
+    }
+
+    getTipo(tipo)
+    {
+        if(tipo==='png'||tipo==='jpg')
+        {
+            return "image/"+tipo
+        }
+        else if (tipo ==='txt')
+        {
+            return "text/plain;charset=utf-8"
+        }
+        else
+        {
+           return "octet/stream"
+        }
     }
     render() 
     {
@@ -127,6 +168,17 @@ export class Doct extends Component {
                     <Col sm="12" md={{ size: 6, offset: 3 }}>
                         Autor: {user}
                     </Col>
+                    <Col sm="12" md={{ size: 6, offset: 3 }}>
+                             <img src={logo}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="6" >
+                        <Button  onClick={this.ver} color="success"block>descargar</Button>
+                    </Col>
+                    <Col xs="6" >
+                        <Button onClick={this.delec_doc} color="danger" block>eliminar </Button>
+                    </Col>
                 </Row>
                 <Row>
                     <Col sm="12" md={{ size: 6, offset: 3 }}>
@@ -135,14 +187,6 @@ export class Doct extends Component {
                                              <a href="#" className="alert-link">{flag.messeg}</a>.
                                         </Alert>
                                 </Fade>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs="6" >
-                        <Button  onClick={this.ver} color="success"block>ver contenido</Button>
-                    </Col>
-                    <Col xs="6" >
-                        <Button onClick={this.delec_doc} color="danger" block>eliminar </Button>
                     </Col>
                 </Row>    
             </Container>

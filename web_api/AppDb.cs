@@ -10,7 +10,7 @@ namespace exampleAPP
         {
             //server=192.168.1.29;user=root;password=secret;database=documentos"
             MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
-            conn_string.Server = "192.168.1.29";
+            conn_string.Server = "192.168.1.24";
             conn_string.Port = 33060;
             conn_string.UserID = "root";
             conn_string.Password = "secret";

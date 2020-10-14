@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\APPS\\examen_Bi\\web_api\\web_api.csproj": {}
+    "D:\\APPS\\exams\\web_api\\web_api.csproj": {}
   },
   "projects": {
-    "D:\\APPS\\examen_Bi\\web_api\\web_api.csproj": {
+    "D:\\APPS\\exams\\web_api\\web_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\APPS\\examen_Bi\\web_api\\web_api.csproj",
+        "projectUniqueName": "D:\\APPS\\exams\\web_api\\web_api.csproj",
         "projectName": "web_api",
-        "projectPath": "D:\\APPS\\examen_Bi\\web_api\\web_api.csproj",
+        "projectPath": "D:\\APPS\\exams\\web_api\\web_api.csproj",
         "packagesPath": "C:\\Users\\hboiton\\.nuget\\packages\\",
-        "outputPath": "D:\\APPS\\examen_Bi\\web_api\\obj\\",
+        "outputPath": "D:\\APPS\\exams\\web_api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hboiton\\AppData\\Roaming\\NuGet\\NuGet.Config"

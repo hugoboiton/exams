@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+wpHr3gHqA0VMabvYyqz9g+6rBTYjCvv6Y+lwbzmm8jEgDTM7T5bZoPJdpu8+kGvnwq9c3CsRBkjb3D0vaE59w==",
+  "dgSpecHash": "73vIojV6V4tWJ3IvRrlKLOz+Lz5naxEcDQFcilj0osnikjyps6CWyG1MDFBKcWQEF++3P1XU8k2L+9Fd0FhpFQ==",
   "success": true,
-  "projectFilePath": "D:\\APPS\\examen_Bi\\web_api\\web_api.csproj",
+  "projectFilePath": "D:\\APPS\\exams\\web_api\\web_api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hboiton\\.nuget\\packages\\mysqlconnector\\1.0.1\\mysqlconnector.1.0.1.nupkg.sha512"
   ],
